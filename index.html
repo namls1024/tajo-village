@@ -4,324 +4,783 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>파주 타조마을 | 365일 자연 속 특별한 하루</title>
-<meta name="description" content="파주 타조마을 동물체험농장. 365일 운영, 이용시간 무제한, 당일 재입장 가능.">
+<meta name="description" content="파주 타조마을 우농타조농장. 동물과 자연이 함께하는 가족 체험농장. 365일 운영, 이용시간 무제한, 당일 재입장 가능.">
+<title>파주 타조마을 | TAJO VILLAGE</title>
+
 <style>
+:root {
+    --green: #294532;
+    --light-green: #e9eddf;
+    --cream: #f8f8f3;
+    --yellow: #f1e4bc;
+    --white: #ffffff;
+}
+
 * {
     box-sizing: border-box;
 }
+
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
+
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif;
-    background: #faf9f4;
-    color: #294532;
+    font-family: -apple-system, BlinkMacSystemFont,
+        "Apple SD Gothic Neo", "Noto Sans KR",
+        sans-serif;
+    background: var(--cream);
+    color: var(--green);
+    text-align: center;
     line-height: 1.7;
 }
-nav {
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* 상단 메뉴 */
+
+header {
     background: white;
-    padding: 20px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px #00000008;
+}
+
+.navbar {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
 }
+
 .logo {
-    font-size: 24px;
+    font-size: 25px;
     font-weight: 900;
     letter-spacing: 2px;
 }
-.menu {
+
+nav {
     display: flex;
-    gap: 24px;
+    justify-content: center;
     flex-wrap: wrap;
-}
-.menu a {
-    color: #294532;
-    text-decoration: none;
-    font-weight: bold;
+    gap: 25px;
 }
 
+nav a {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+nav a:hover {
+    color: #789665;
+}
+
+/* 메인 화면 */
+
 .hero {
-    background: linear-gradient(
-        rgba(20, 40, 25, 0.45),
-        rgba(20, 40, 25, 0.45)
-    ), url('main.png');
+    background:
+        linear-gradient(
+            rgba(20, 40, 25, 0.35),
+            rgba(20, 40, 25, 0.45)
+        ),
+        url('main.png');
     background-size: cover;
     background-position: center;
+    min-height: 600px;
+    padding: 100px 20px;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
     text-align: center;
-    padding: 150px 20px;
+}
+
+.hero-label {
+    font-size: 13px;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
 }
 
 .hero h1 {
-    font-size: clamp(36px, 6vw, 64px);
+    font-size: clamp(38px, 5vw, 68px);
     line-height: 1.3;
-    margin: 25px 0;
+    margin: 0 0 25px;
+    word-break: keep-all;
+    text-shadow: 0 3px 15px #00000040;
 }
+
 .hero p {
     font-size: 18px;
-}
-.eyebrow {
-    letter-spacing: 4px;
-    font-size: 12px;
-}
-.button {
-    display: inline-block;
-    padding: 14px 30px;
-    margin-top: 20px;
-    background: #f1e4bc;
-    color: #294532;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-}
-section {
-    max-width: 1100px;
-    margin: auto;
-    padding: 65px 24px;
-    text-align: center;
-}
-h2 {
-    font-size: 32px;
-    margin-bottom: 12px;
-}
-.subtitle {
-    color: #657462;
     margin-bottom: 35px;
 }
-.benefits, .animals, .prices {
+
+/* 버튼 */
+
+.button {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--green);
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: 0.25s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px #00000020;
+}
+
+.button-green {
+    background: var(--green);
+    color: white;
+}
+
+.button-naver {
+    background: #03c75a;
+    color: white;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+/* 공통 섹션 */
+
+section {
+    padding: 80px 0;
+}
+
+.section-label {
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    color: #789665;
+}
+
+.section-title {
+    font-size: clamp(28px, 3vw, 38px);
+    margin: 10px 0 15px;
+    line-height: 1.4;
+    word-break: keep-all;
+}
+
+.section-desc {
+    font-size: 16px;
+    color: #71806d;
+    margin: 0 auto 40px;
+    word-break: keep-all;
+}
+
+/* 타조마을 장점 */
+
+.features {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
+    margin-top: 40px;
 }
-.card {
+
+.feature {
     background: white;
-    border: 1px solid #e5e9dd;
+    border: 1px solid #e2e7dd;
     border-radius: 20px;
-    padding: 30px 15px;
-    box-shadow: 0 5px 20px #29453208;
+    padding: 35px 15px;
 }
-.emoji {
-    font-size: 52px;
+
+.feature-icon {
+    font-size: 40px;
 }
-.card h3 {
+
+.feature h3 {
     font-size: 22px;
+    margin: 12px 0 5px;
+}
+
+.feature p {
+    font-size: 14px;
+    color: #71806d;
+}
+
+/* 동물 소개 */
+
+.animal-section {
+    background: #eef1e7;
+}
+
+.animals {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.animal-card {
+    min-width: 0;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px #29453208;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.animal-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px #29453220;
+}
+
+.animal-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center;
+}
+
+.animal-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #dfe8d7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+}
+
+.animal-info {
+    padding: 18px 10px;
+}
+
+.animal-info h3 {
+    font-size: 22px;
+    margin: 0 0 5px;
+}
+
+.animal-info p {
+    font-size: 13px;
+    color: #71806d;
+    margin: 0;
+}
+
+/* 이용 요금 */
+
+.prices {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.price-card {
+    background: white;
+    border: 1px solid #e2e7dd;
+    border-radius: 20px;
+    padding: 35px 15px;
+}
+
+.price-icon {
+    font-size: 40px;
+}
+
+.price-card h3 {
     margin: 10px 0;
+    font-size: 20px;
 }
-.card p {
-    margin: 5px 0;
-    color: #657462;
-}
-.ramen {
-    background: #efe4ca;
-    padding: 50px 25px;
-    border-radius: 24px;
-}
+
 .price {
-    font-size: 32px;
+    font-size: 34px;
     font-weight: 900;
 }
-footer {
-    background: #294532;
-    color: white;
-    padding: 50px 20px;
-    text-align: center;
+
+.price-card p {
+    color: #71806d;
+    font-size: 14px;
 }
-@media (max-width: 600px) {
-    .benefits, .prices {
-        grid-template-columns: 1fr;
+
+/* 즉석라면 */
+
+.ramen-section {
+    background: var(--green);
+    color: white;
+}
+
+.ramen-section .section-label {
+    color: var(--yellow);
+}
+
+.ramen-section h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    word-break: keep-all;
+}
+
+.ramen-text {
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 18px;
+    word-break: keep-all;
+}
+
+.ramen-icon {
+    font-size: 85px;
+}
+
+.topping {
+    display: inline-block;
+    padding: 10px 24px;
+    margin: 20px 5px;
+    background: #ffffff15;
+    border: 1px solid #ffffff30;
+    border-radius: 40px;
+}
+
+/* 방문 안내 */
+
+.visit-card {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px 25px;
+    border-radius: 24px;
+    background: white;
+    border: 1px solid #e2e7dd;
+}
+
+.address {
+    font-size: 20px;
+    font-weight: 700;
+    word-break: keep-all;
+}
+
+.visit-note {
+    color: #71806d;
+    font-size: 15px;
+}
+
+/* 하단 */
+
+footer {
+    background: #203a2a;
+    color: white;
+    padding: 45px 20px;
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+footer p {
+    font-size: 14px;
+    color: #c6d4c4;
+}
+
+.image-note {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* 모바일 최적화 */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        padding: 15px 10px;
+        gap: 10px;
     }
-    .animals {
-        grid-template-columns: repeat(2, 1fr);
+
+    .logo {
+        font-size: 21px;
     }
+
     nav {
-        justify-content: center;
+        gap: 18px;
     }
-    .menu {
-        gap: 14px;
-        font-size: 14px;
+
+    nav a {
+        font-size: 13px;
     }
+
     .hero {
-        padding: 70px 20px;
+        min-height: 480px;
+        padding: 70px 15px;
     }
+
+    .hero-label {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
     section {
-        padding: 40px 18px;
+        padding: 55px 0;
+    }
+
+    .animals {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .animal-info h3 {
+        font-size: 18px;
+    }
+
+    .animal-info p {
+        font-size: 12px;
+    }
+
+    .animal-placeholder {
+        font-size: 50px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .feature {
+        padding: 20px;
+    }
+
+    .prices {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .price-card {
+        padding: 25px 15px;
+    }
+
+    .ramen-text {
+        font-size: 16px;
+    }
+
+    .address {
+        font-size: 17px;
     }
 }
 </style>
 </head>
+
 <body>
 
-<nav>
-    <div class="logo">TAJO VILLAGE</div>
-    <div class="menu">
-        <a href="#about">타조마을</a>
-        <a href="#animals">동물소개</a>
-        <a href="#price">이용안내</a>
-        <a href="#location">오시는 길</a>
+<header>
+    <div class="navbar">
+        <a href="#" class="logo">TAJO VILLAGE</a>
+        <nav>
+            <a href="#about">타조마을</a>
+            <a href="#animals">동물소개</a>
+            <a href="#price">이용안내</a>
+            <a href="#visit">오시는 길</a>
+        </nav>
     </div>
-</nav>
-
-<header class="hero">
-    <div class="eyebrow">NATURE · ANIMALS · FAMILY</div>
-    <h1>오늘은 자연 속에서<br>놀아요.</h1>
-    <p>아이와 함께하는 특별한 하루, 파주 타조마을</p>
-    <a class="button" href="#price">방문 안내</a>
 </header>
 
-<section id="about">
-    <h2>시간에 쫓기지 않는 행복</h2>
-    <p class="subtitle">타조마을에서 여유로운 하루를 보내세요.</p>
-    <div class="benefits">
-        <div class="card">
-            <div class="emoji">📅</div>
-            <h3>365일 운영</h3>
-            <p>언제든 만나러 오세요.</p>
-        </div>
-        <div class="card">
-            <div class="emoji">⏰</div>
-            <h3>이용시간 무제한</h3>
-            <p>운영시간 내 여유롭게 즐기세요.</p>
-        </div>
-        <div class="card">
-            <div class="emoji">🔄</div>
-            <h3>당일 재입장</h3>
-            <p>하루 동안 자유롭게 이용하세요.</p>
-        </div>
-    </div>
-</section>
+<main>
 
-<section id="animals">
-    <h2>우리 동물 친구들</h2>
-    <p class="subtitle">가까이에서 만나는 특별한 동물들</p>
-<div class="animals">
-    <div class="card">
-        <img src="ostrich.png" alt="타조">
-        <h3>타조</h3>
-    </div>
-    <div class="card">
-        <img src="raccoon.png" alt="라쿤">
-        <h3>라쿤</h3>
-    </div>
-    <div class="card">
-        <img src="meerkat.png" alt="미어캣">
-        <h3>미어캣</h3>
-    </div>
-    <div class="card">
-        <img src="rabbit.png" alt="토끼">
-        <h3>토끼</h3>
-    </div>
-    <div class="card">
-        <img src="goat.png" alt="염소">
-        <h3>염소</h3>
-    </div>
-    <div class="card">
-        <div class="emoji">🐴</div>
-        <h3>미니말</h3>
-    </div>
-    <div class="card">
-        <div class="emoji">🦚</div>
-        <h3>공작새</h3>
-    </div>
-    <div class="card">
-        <div class="emoji">🐾</div>
-        <h3>기니피그</h3>
-    </div>
-    <div class="card">
-        <div class="emoji">🦜</div>
-        <h3>특수 조류</h3>
+<div class="hero">
+    <div class="hero-content">
+        <div class="hero-label">
+            NATURE · ANIMALS · FAMILY
+        </div>
+        <h1>오늘은 자연 속에서<br>놀아요.</h1>
+        <p>아이와 함께하는 특별한 하루, 파주 타조마을</p>
+        <a href="#visit" class="button">방문 안내</a>
     </div>
 </div>
-```
 
-**아직 커밋하지 말고 다음 단계까지 진행해 줘.**
+<section id="about">
+    <div class="container">
+        <div class="section-label">WELCOME TO TAJO VILLAGE</div>
+        <h2 class="section-title">시간에 쫓기지 않는 행복</h2>
+        <p class="section-desc">
+            타조마을에서 여유로운 하루를 보내세요.
+        </p>
 
-## 3. CSS 코드 추가하기
+        <div class="features">
 
-다시 Command + F를 눌러 아래 내용을 검색해.
+            <div class="feature">
+                <div class="feature-icon">📅</div>
+                <h3>365일 운영</h3>
+                <p>가족과 함께 언제든 놀러오세요.</p>
+            </div>
 
-<row align="center">
-  <box border radius="md" padding={3} flex={1}><escape></style></escape></box>
-  <button variant="outline" onClick={()=>GenUI.copy("</style>")}><icon name="copy"/> 복사</button>
-</row>
+            <div class="feature">
+                <div class="feature-icon">⏰</div>
+                <h3>이용시간 무제한</h3>
+                <p>운영시간 내에서 여유롭게 즐기세요.</p>
+            </div>
 
-찾았다면 해당 태그 바로 위에 아래 코드를 추가해 줘.
+            <div class="feature">
+                <div class="feature-icon">🎟️</div>
+                <h3>당일 재입장 가능</h3>
+                <p>잠시 외출하고 다시 방문해도 좋아요.</p>
+            </div>
 
-<CodeBlock language="css">
-.animals .card {
-    padding: 0;
-    overflow: hidden;
-}
-.animals .card img {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    display: block;
-}
-.animals .card h3 {
-    padding: 10px;
-    margin: 0;
-}
-.animals .card .emoji {
-    aspect-ratio: 4 / 3;
-    display: grid;
-    place-items: center;
-    background: #e9eddf;
-}
-.animals .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px #29453220;
-}
-.animals .card {
-    transition: 0.3s ease;
-}
+        </div>
+    </div>
 </section>
 
-<section>
-    <div class="ramen">
-        <div class="emoji">🍜</div>
-        <h2>한강라면보다 맛있는<br>타조마을 즉석라면!</h2>
-        <p>대파와 콩나물 무료 토핑으로<br>더 맛있는 라면을 만들어 보세요.</p>
-        <div class="price">3,500원</div>
+<section id="animals" class="animal-section">
+    <div class="container">
+
+        <div class="section-label">OUR ANIMAL FRIENDS</div>
+        <h2 class="section-title">우리 동물 친구들</h2>
+        <p class="section-desc">
+            자연 속에서 만나는 사랑스러운 동물 친구들
+        </p>
+
+        <div class="animals">
+
+            <article class="animal-card">
+                <img src="ostrich.png" alt="타조 이미지" loading="lazy">
+                <div class="animal-info">
+                    <h3>타조</h3>
+                    <p>타조마을의 주인공</p>
+                </div>
+            </article>
+
+            <article class="animal-card">
+                <img src="raccoon.png" alt="라쿤 이미지" loading="lazy">
+                <div class="animal-info">
+                    <h3>라쿤</h3>
+                    <p>호기심 가득한 장난꾸러기</p>
+                </div>
+            </article>
+
+            <article class="animal-card">
+                <img src="meerkat.png" alt="미어캣 이미지" loading="lazy">
+                <div class="animal-info">
+                    <h3>미어캣</h3>
+                    <p>두 발로 서 있는 귀여운 친구</p>
+                </div>
+            </article>
+
+            <article class="animal-card">
+                <img src="rabbit.png" alt="토끼 이미지" loading="lazy">
+                <div class="animal-info">
+                    <h3>토끼</h3>
+                    <p>포근하고 사랑스러운 친구</p>
+                </div>
+            </article>
+
+            <article class="animal-card">
+                <img src="goat.png" alt="염소 이미지" loading="lazy">
+                <div class="animal-info">
+                    <h3>염소</h3>
+                    <p>먹이를 좋아하는 활발한 친구</p>
+                </div>
+            </article>
+
+            <article class="animal-card">
+                <div class="animal-placeholder">🐴</div>
+                <div class="animal-info">
+                    <h3>미니말</h3>
+                    <p>작고 귀여운 말 친구</p>
+                </div>
+            </article>
+
+            <article class="animal-card">
+                <div class="animal-placeholder">🦚</div>
+                <div class="animal-info">
+                    <h3>공작새</h3>
+                    <p>아름다운 깃털의 주인공</p>
+                </div>
+            </article>
+
+            <article class="animal-card">
+                <div class="animal-placeholder">🐹</div>
+                <div class="animal-info">
+                    <h3>기니피그</h3>
+                    <p>작고 소중한 친구</p>
+                </div>
+            </article>
+
+            <article class="animal-card">
+                <div class="animal-placeholder">🦜</div>
+                <div class="animal-info">
+                    <h3>특수 조류</h3>
+                    <p>다양하고 신비로운 새 친구들</p>
+                </div>
+            </article>
+
+        </div>
     </div>
 </section>
 
 <section id="price">
-    <h2>이용 요금</h2>
-    <p class="subtitle">부담 없이 즐기는 가족 나들이</p>
-    <div class="prices">
-        <div class="card">
-            <h3>입장료</h3>
-            <div class="price">6,000원</div>
-            <p>이용시간 무제한</p>
-        </div>
-        <div class="card">
-            <h3>동물 먹이</h3>
-            <div class="price">2,000원</div>
-        </div>
-        <div class="card">
-            <h3>즉석라면</h3>
-            <div class="price">3,500원</div>
-            <p>대파 · 콩나물 무료</p>
+    <div class="container">
+
+        <div class="section-label">TICKET & EXPERIENCE</div>
+        <h2 class="section-title">이용 요금 안내</h2>
+        <p class="section-desc">
+            부담 없이 즐기는 우리 가족의 특별한 하루
+        </p>
+
+        <div class="prices">
+
+            <div class="price-card">
+                <div class="price-icon">🎟️</div>
+                <h3>입장료</h3>
+                <div class="price">6,000원</div>
+                <p>이용시간 무제한 · 당일 재입장</p>
+            </div>
+
+            <div class="price-card">
+                <div class="price-icon">🥕</div>
+                <h3>동물 먹이</h3>
+                <div class="price">2,000원</div>
+                <p>동물 친구들에게 먹이주기</p>
+            </div>
+
+            <div class="price-card">
+                <div class="price-icon">🍜</div>
+                <h3>즉석라면</h3>
+                <div class="price">3,500원</div>
+                <p>대파 · 콩나물 무료 토핑</p>
+            </div>
+
         </div>
     </div>
 </section>
 
-<section id="location">
-    <h2>오시는 길</h2>
-    <p>경기도 파주시 교하로 595-36</p>
-    <p>네비게이션 검색 : 타조마을</p>
-    <p>예약 없이 현장 방문도 가능합니다.</p>
+<section class="ramen-section">
+    <div class="container">
+
+        <div class="section-label">TAJO VILLAGE SPECIAL</div>
+        <div class="ramen-icon">🍜</div>
+
+        <h2>한강 즉석라면보다 맛있다!</h2>
+
+        <div class="ramen-text">
+            12년차 라면 블로거가 직접 먹어보고 세팅했어요!
+            <br><br>
+            타조는 안 보시더라도 즉석라면은 꼭 드셔보세요.
+            <br>
+            <strong>정말 맛있습니다!</strong>
+        </div>
+
+        <div>
+            <span class="topping">대파 무료</span>
+            <span class="topping">콩나물 무료</span>
+        </div>
+
+        <h2>3,500원</h2>
+
+    </div>
 </section>
 
+<section id="visit">
+    <div class="container">
+
+        <div class="section-label">VISIT US</div>
+        <h2 class="section-title">타조마을 오시는 길</h2>
+        <p class="section-desc">
+            가족과 함께 자연 속으로 떠나보세요.
+        </p>
+
+        <div class="visit-card">
+
+            <div style="font-size:45px;">📍</div>
+
+            <h2>타조마을 · 우농타조농장</h2>
+
+            <p class="address">
+                경기도 파주시 교하로 595-36
+            </p>
+
+            <p class="visit-note">
+                지번 : 동패동 616-3
+                <br>
+                바베큐 그릴과 같은 주차장을 사용합니다.
+                <br>
+                내비게이션 검색 : 타조마을
+            </p>
+
+            <p>
+                예약 없이 방문하셔도 됩니다.
+                <br>
+                네이버에서도 타조마을을 찾아보세요.
+            </p>
+
+            <div class="button-group">
+
+                <a class="button button-naver"
+                   href="https://search.naver.com/search.naver?query=파주%20타조마을%20예약"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    네이버 예약 검색
+                </a>
+
+                <a class="button button-green"
+                   href="https://map.naver.com/p/search/파주%20타조마을"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    네이버 지도
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+</main>
+
 <footer>
-    <h2>TAJO VILLAGE</h2>
+
+    <div class="footer-logo">TAJO VILLAGE</div>
+
     <p>파주 타조마을 · 우농타조농장</p>
-    <p>동물과 자연이 함께하는 행복한 공간</p>
+
+    <p>경기도 파주시 교하로 595-36</p>
+
+    <p>365일 운영 · 이용시간 무제한 · 당일 재입장 가능</p>
+
+    <p class="image-note">
+        본 홈페이지의 일부 이미지는 AI로 제작된 예시 이미지입니다.
+    </p>
+
+    <p>Copyright © TAJO VILLAGE. All rights reserved.</p>
+
 </footer>
 
 </body>
