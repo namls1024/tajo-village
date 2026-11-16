@@ -198,17 +198,87 @@ footer {
 <section id="animals">
     <h2>우리 동물 친구들</h2>
     <p class="subtitle">가까이에서 만나는 특별한 동물들</p>
-    <div class="animals">
-        <div class="card"><div class="emoji">🐦</div><h3>타조</h3></div>
-        <div class="card"><div class="emoji">🦝</div><h3>라쿤</h3></div>
-        <div class="card"><div class="emoji">🐾</div><h3>미어캣</h3></div>
-        <div class="card"><div class="emoji">🐇</div><h3>토끼</h3></div>
-        <div class="card"><div class="emoji">🐐</div><h3>염소</h3></div>
-        <div class="card"><div class="emoji">🐴</div><h3>미니말</h3></div>
-        <div class="card"><div class="emoji">🦚</div><h3>공작새</h3></div>
-        <div class="card"><div class="emoji">🐾</div><h3>기니피그</h3></div>
-        <div class="card"><div class="emoji">🦜</div><h3>특수 조류</h3></div>
+<div class="animals">
+    <div class="card">
+        <img src="ostrich.png" alt="타조">
+        <h3>타조</h3>
     </div>
+    <div class="card">
+        <img src="raccoon.png" alt="라쿤">
+        <h3>라쿤</h3>
+    </div>
+    <div class="card">
+        <img src="meerkat.png" alt="미어캣">
+        <h3>미어캣</h3>
+    </div>
+    <div class="card">
+        <img src="rabbit.png" alt="토끼">
+        <h3>토끼</h3>
+    </div>
+    <div class="card">
+        <img src="goat.png" alt="염소">
+        <h3>염소</h3>
+    </div>
+    <div class="card">
+        <div class="emoji">🐴</div>
+        <h3>미니말</h3>
+    </div>
+    <div class="card">
+        <div class="emoji">🦚</div>
+        <h3>공작새</h3>
+    </div>
+    <div class="card">
+        <div class="emoji">🐾</div>
+        <h3>기니피그</h3>
+    </div>
+    <div class="card">
+        <div class="emoji">🦜</div>
+        <h3>특수 조류</h3>
+    </div>
+</div>
+```
+
+**아직 커밋하지 말고 다음 단계까지 진행해 줘.**
+
+## 3. CSS 코드 추가하기
+
+다시 Command + F를 눌러 아래 내용을 검색해.
+
+<row align="center">
+  <box border radius="md" padding={3} flex={1}><escape></style></escape></box>
+  <button variant="outline" onClick={()=>GenUI.copy("</style>")}><icon name="copy"/> 복사</button>
+</row>
+
+찾았다면 해당 태그 바로 위에 아래 코드를 추가해 줘.
+
+<CodeBlock language="css">
+.animals .card {
+    padding: 0;
+    overflow: hidden;
+}
+.animals .card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+}
+.animals .card h3 {
+    padding: 10px;
+    margin: 0;
+}
+.animals .card .emoji {
+    aspect-ratio: 4 / 3;
+    display: grid;
+    place-items: center;
+    background: #e9eddf;
+}
+.animals .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px #29453220;
+}
+.animals .card {
+    transition: 0.3s ease;
+}
 </section>
 
 <section>
